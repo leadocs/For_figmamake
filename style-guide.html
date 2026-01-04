@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>SurferCloud Design System</title>
+		<style>
+			:root {
+				/* Core Colors from globals.css & tailwind.config.ts */
+				--primary-5: #3d89fa;
+				--primary-4: #8ec3ff;
+				--primary-6: #165fcb;
+				--primary-3: #c3dfff;
+
+				--text-title: #2e3a57;
+				--text-body: #616f8a;
+				--text-black: #374567;
+				--text-white: #ffffff;
+				--text-gray: #526075;
+
+				--gray-10: #e1e6f0;
+				--bg-primary2: #e6f1ff;
+			}
+
+			body {
+				font-family: 'Helvetica Neue', Arial, sans-serif;
+				background-color: #f8fafc;
+				color: var(--text-body);
+				line-height: 1.5;
+				margin: 0;
+				padding: 40px;
+			}
+
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				background: white;
+				padding: 60px;
+				border-radius: 24px;
+				box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+			}
+
+			h1 {
+				color: var(--text-title);
+				font-size: 42px;
+				font-weight: 900;
+				margin-bottom: 10px;
+				letter-spacing: -0.02em;
+			}
+
+			h2 {
+				color: var(--text-title);
+				font-size: 24px;
+				border-bottom: 1px solid #eee;
+				padding-bottom: 16px;
+				margin-top: 60px;
+				margin-bottom: 32px;
+			}
+
+			.grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+				gap: 32px;
+			}
+
+			/* Color Swatches */
+			.swatch-group {
+				margin-bottom: 24px;
+			}
+			.swatch-group-title {
+				font-size: 14px;
+				font-weight: bold;
+				color: var(--text-gray);
+				margin-bottom: 12px;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+			}
+			.swatch {
+				border-radius: 12px;
+				overflow: hidden;
+				border: 1px solid #f1f5f9;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+			}
+			.swatch-color {
+				height: 120px;
+				width: 100%;
+			}
+			.swatch-info {
+				padding: 16px;
+				background: #fff;
+			}
+			.swatch-name {
+				font-weight: bold;
+				display: block;
+				margin-bottom: 4px;
+				color: var(--text-title);
+			}
+			.swatch-hex {
+				font-family: monospace;
+				color: var(--text-gray);
+				font-size: 13px;
+			}
+
+			/* Typography */
+			.type-sample {
+				margin-bottom: 32px;
+			}
+			.type-meta {
+				font-family: monospace;
+				font-size: 12px;
+				color: var(--primary-5);
+				background: var(--bg-primary2);
+				padding: 4px 8px;
+				border-radius: 4px;
+				display: inline-block;
+				margin-bottom: 8px;
+			}
+
+			/* Shadows */
+			.shadow-box {
+				height: 120px;
+				background: white;
+				border-radius: 12px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: var(--text-title);
+				font-weight: bold;
+				border: 1px solid #f1f5f9;
+			}
+
+			/* Buttons & Interactive */
+			.btn-row {
+				display: flex;
+				gap: 24px;
+				align-items: center;
+				margin-bottom: 32px;
+			}
+			.btn {
+				padding: 0 24px;
+				border-radius: 8px;
+				font-weight: bold;
+				text-decoration: none;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+				transition: all 0.3s ease;
+			}
+
+			/* Button Variants from globals.css */
+			.btn-lg {
+				height: 48px;
+				font-size: 16px;
+			}
+
+			.btn-blue {
+				color: white;
+				background-image: linear-gradient(180deg, var(--primary-4) 0, var(--primary-5) 50%, var(--primary-5) 50%, var(--primary-6));
+				background-size: 100% 200%;
+				border: none;
+			}
+			.btn-blue:hover {
+				background-position: 0 100%;
+				box-shadow: 0 8px 16px rgba(61, 137, 250, 0.2);
+			}
+
+			.btn-white {
+				background: white;
+				color: var(--primary-5);
+				border: 1px solid #eee;
+			}
+			.btn-white:hover {
+				background-color: var(--primary-3);
+				border-color: var(--primary-3);
+			}
+
+			/* Card Hover Effect */
+			.hover-card {
+				padding: 24px;
+				background: white;
+				border: 1px solid #eee;
+				border-radius: 16px;
+				transition: all 0.3s ease;
+				cursor: pointer;
+			}
+			.hover-card:hover {
+				transform: translateY(-4px);
+				box-shadow: 0 12px 28px 0 rgba(23, 25, 49, 0.12);
+				border-color: transparent;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<header style="margin-bottom: 60px">
+				<h1>Design System</h1>
+				<p style="font-size: 18px; color: var(--text-body)">Standard visual guidelines for SurferCloud interface elements.</p>
+			</header>
+
+			<!-- 1. Color System -->
+			<section>
+				<h2>1. Color System</h2>
+
+				<div class="swatch-group">
+					<div class="swatch-group-title">Primary Brand</div>
+					<div class="grid">
+						<div class="swatch">
+							<div class="swatch-color" style="background-color: #3d89fa"></div>
+							<div class="swatch-info">
+								<span class="swatch-name">Primary Blue</span>
+								<span class="swatch-hex">#3D89FA (var--primary-5)</span>
+							</div>
+						</div>
+						<div class="swatch">
+							<div class="swatch-color" style="background-color: #165fcb"></div>
+							<div class="swatch-info">
+								<span class="swatch-name">Primary Dark</span>
+								<span class="swatch-hex">#165FCB (var--primary-6)</span>
+							</div>
+						</div>
+						<div class="swatch">
+							<div class="swatch-color" style="background-color: #8ec3ff"></div>
+							<div class="swatch-info">
+								<span class="swatch-name">Primary Light</span>
+								<span class="swatch-hex">#8EC3FF (var--primary-4)</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="swatch-group">
+					<div class="swatch-group-title">Text & Neutrals</div>
+					<div class="grid">
+						<div class="swatch">
+							<div class="swatch-color" style="background-color: #2e3a57"></div>
+							<div class="swatch-info">
+								<span class="swatch-name">Title Dark</span>
+								<span class="swatch-hex">#2E3A57 (var--text-title)</span>
+							</div>
+						</div>
+						<div class="swatch">
+							<div class="swatch-color" style="background-color: #616f8a"></div>
+							<div class="swatch-info">
+								<span class="swatch-name">Body Text</span>
+								<span class="swatch-hex">#616F8A (var--text-body)</span>
+							</div>
+						</div>
+						<div class="swatch">
+							<div class="swatch-color" style="background-color: #e1e6f0"></div>
+							<div class="swatch-info">
+								<span class="swatch-name">Border Gray</span>
+								<span class="swatch-hex">#E1E6F0 (var--gray-10)</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- 2. Typography -->
+			<section>
+				<h2>2. Typography</h2>
+
+				<div class="type-sample">
+					<span class="type-meta">H1 / 52px / Satoshi-Black</span>
+					<div style="font-size: 52px; font-weight: 900; color: var(--text-title); line-height: 1.2">Cloud Infrastructure for Everyone</div>
+				</div>
+
+				<div class="type-sample">
+					<span class="type-meta">H2 / 48px / Satoshi-Black</span>
+					<div style="font-size: 48px; font-weight: 900; color: var(--text-title); line-height: 1.2">Global Data Centers</div>
+				</div>
+
+				<div class="type-sample">
+					<span class="type-meta">H3 / 36px / Satoshi-Black</span>
+					<div style="font-size: 36px; font-weight: 900; color: var(--text-title); line-height: 1.3">Recommended Configurations</div>
+				</div>
+
+				<div class="type-sample">
+					<span class="type-meta">Body / 16px / Satoshi-Regular</span>
+					<div style="font-size: 16px; color: var(--text-body); max-width: 600px">
+						Experience high-performance cloud computing with our scalable infrastructure. Deployed across 20+ regions worldwide, ensuring low latency and high availability for your
+						applications.
+					</div>
+				</div>
+			</section>
+
+			<!-- 3. Shadows & Elevation -->
+			<section>
+				<h2>3. Shadows & Elevation</h2>
+				<div class="grid">
+					<div>
+						<div class="shadow-box" style="box-shadow: 0px 4px 4px -2px rgba(23, 25, 49, 0.04)">Level 1</div>
+						<p style="font-size: 12px; color: var(--text-gray); margin-top: 8px">Card Base Shadow</p>
+					</div>
+					<div>
+						<div class="shadow-box" style="box-shadow: 0px 8px 20px rgba(23, 25, 49, 0.08)">Level 2</div>
+						<p style="font-size: 12px; color: var(--text-gray); margin-top: 8px">Dropdown / Hover</p>
+					</div>
+					<div>
+						<div
+							class="shadow-box"
+							style="
+								box-shadow:
+									0px 16px 16px rgba(55, 69, 103, 0.02),
+									0px 8px 8px rgba(235, 240, 252, 0.02);
+							"
+						>
+							Level 3
+						</div>
+						<p style="font-size: 12px; color: var(--text-gray); margin-top: 8px">Float / Modal</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- 4. Interactive Elements -->
+			<section>
+				<h2>4. Interactive Elements</h2>
+
+				<div class="btn-row">
+					<div>
+						<button class="btn btn-lg btn-blue">Primary Action</button>
+						<p style="font-size: 12px; color: var(--text-gray); margin-top: 8px">Gradient background + Hover shift</p>
+					</div>
+
+					<div>
+						<button class="btn btn-lg btn-white">Secondary Action</button>
+						<p style="font-size: 12px; color: var(--text-gray); margin-top: 8px">Border + Hover fill</p>
+					</div>
+				</div>
+
+				<h3>Card Hover Interaction</h3>
+				<div class="grid" style="margin-top: 24px">
+					<div class="hover-card">
+						<div style="font-weight: bold; font-size: 18px; color: var(--text-title); margin-bottom: 8px">Interactive Card</div>
+						<p style="font-size: 14px; color: var(--text-body)">Hover over this card to see the lift effect and shadow transition used in product lists.</p>
+					</div>
+				</div>
+			</section>
+		</div>
+	</body>
+</html>
