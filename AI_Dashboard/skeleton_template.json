@@ -1,0 +1,37 @@
+{
+  "page": {
+    "title": "AI Dashboard - Enterprise AI Platform",
+    "sections": [
+      {
+        "id": "navbar",
+        "type": "navigation",
+        "content_ref": "navbar"
+      },
+      {
+        "id": "hero",
+        "type": "hero_section",
+        "content_ref": "hero"
+      },
+      {
+        "id": "modelverse",
+        "type": "feature_grid",
+        "content_ref": "modelverse"
+      },
+      {
+        "id": "sandbox",
+        "type": "feature_split",
+        "content_ref": "sandbox"
+      },
+      {
+        "id": "advantages",
+        "type": "cards_section",
+        "content_ref": "advantages"
+      },
+      {
+        "id": "footer",
+        "type": "footer",
+        "content_ref": "footer"
+      }
+    ]
+  }
+}
