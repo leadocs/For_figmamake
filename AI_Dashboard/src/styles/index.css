@@ -1,0 +1,46 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+@layer base {
+  body {
+    background-color: var(--background);
+    background-image: linear-gradient(to right, rgba(226, 232, 240, 0.5) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(226, 232, 240, 0.5) 1px, transparent 1px);
+    background-size: 4rem 4rem;
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card border border-border shadow-sm;
+  }
+  
+  .tech-border {
+    @apply border border-border transition-colors duration-300 hover:border-foreground/50;
+  }
+
+  .text-gradient {
+    @apply text-foreground font-bold tracking-tight;
+  }
+
+  .text-gradient-secondary {
+    @apply text-muted-foreground font-medium;
+  }
+  
+  .text-tech-gold {
+    color: var(--tech-gold);
+  }
+}
+
+/* Grid Overlay - subtle technical feel */
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: -1;
+}
